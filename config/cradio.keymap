@@ -61,6 +61,11 @@
       #binding-cells = <0>;
       bindings = <&kp COLON>, <&kp W>, <&kp Q>, <&kp ENTER>;
     };
+    ultrathink: ultrathink {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&kp U>, <&kp L>, <&kp T>, <&kp R>, <&kp A>, <&kp T>, <&kp H>, <&kp I>, <&kp N>, <&kp K>;
+    };
   };
   combos {
       compatible = "zmk,combos";
@@ -94,6 +99,11 @@
         key-positions = <1 2>;
         bindings = <&kp TAB>;
       };
+      combo_ultrathink {
+        timeout-ms = <60>;
+        key-positions = <5 6 7>;
+        bindings = <&ultrathink>;
+      };
   };
 
   keymap {
@@ -109,8 +119,8 @@
     };
     navigation {
       bindings = <
-        &none  &none  &none  &none  &none                                 &kp PAGE_UP    &none     &kp UP    &none      &none
-        &none  &none  &none  &none  &none                                 &kp TAB        &kp LEFT  &kp DOWN &kp RIGHT  &none
+        &none  &none  &none  &none  &none                                 &kp PAGE_UP    &none     &none    &none      &kp DELETE
+        &none  &none  &none  &none  &none                                 &kp LEFT &kp DOWN &kp UP &kp RIGHT  &none
         &none  &none  &none  &none  &none                                 &kp PAGE_DOWN  &none     &none     &none      &none
                              &none  &kp SPACE                             &kp BACKSPACE  &sl SYM
       >;
@@ -133,3 +143,7 @@
     };
   };
 }; 
+
+
+
+
